@@ -23,24 +23,25 @@
       html, body {
         height: 100%;
         width: 100%;
+        overflow: hidden; /* Prevent scrollbars from appearing */
       }
 
       .container {
         position: relative;
         width: 100%;
         height: 100%;
-        overflow: hidden;
+        overflow: auto; /* Enable scrolling if needed */
       }
 
       .container img {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 100%;  /* Set the image width to 100% */
-
-        height: 100%;  /* Set the image height to 100% */
-
-        object-fit: cover;  /* Ensures the image covers the entire area while maintaining aspect ratio */
+        width: 100%;  /* Image adjusts to container width */
+        height: auto;  /* Maintain aspect ratio */
+        max-width: 100%; /* Ensure it doesn't go beyond the container */
+        max-height: 100%; /* Ensure it doesn't go beyond the container */
+        object-fit: contain;  /* Ensure the entire image is visible */
         transform: translate(-50%, -50%); /* Center the image */
       }
 
@@ -50,7 +51,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        opacity: 0; /* Makes the text transparent */
+        opacity: 0; /* Makes the link clickable over the image */
         text-decoration: none;
       }
     </style>
